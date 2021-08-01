@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+#entry-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+#entry-page #component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #272c36;
+    width: 500px;
+    height: 350px;
+    border-radius: 12px;
+    flex-direction: column;
+}
+
+#entry-page #component #app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#entry-page #component #app #input{
+    width: 300px;
+}
+
+#next-button{
+    background-color: #FB855C;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+}
+
+#number-input {
+    width: 300px;
+}
+#entry-page #component #header #head {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 3rem;
+    color: #FB855C;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+}
+
+#entry-page #image{
+    width: 512px;
+    height: 512px;
+    margin:20px
+}
+
+#entry-page #navbar{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#entry-page #navbar img{
+    left: 30px;
+    position: absolute;
+    top: 27px;
+    width: 36px;
+    height: 36px;
+
+}
+
+#entry-page #navbar #head{
+    left: 80px;
+    position: absolute;
+    top: 5px;
+    font-size: 24px;
+    color: white;
+}
+
+@media screen and (max-width:930px) {
+    #entry-page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #entry-page #component{
+        margin-top: 100px;
+    }
+
+}
+
+@media screen and (max-width:530px) {
+    #entry-page #component {
+        width: 90%;
+    }
+    #entry-page #component #app{
+        width: 90%;
+    }
+
+    #entry-page #component #app #input{
+        width: 90%;
+    }
+
+    #entry-page #image{
+        display: none;
+    }
+    #entry-page #component{
+        margin-top: 0px;
+    }
+    #entry-page #component #header #head{
+        font-size: 18px;
+    }
+
+    
+}
+
