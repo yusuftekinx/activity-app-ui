@@ -1,21 +1,25 @@
 import React,{useState} from "react";
 import { Button, Form, Header, Icon, Input } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { setName } from "../../Redux/actions/action";
 
-export default function SetName(props) {
-  const [name, setName] = useState("");
+function SetName(props) {
+  const [name, setUserName] = useState("");
   const [loading, setLoading] = useState(false);
 
   const changeName = (e) => {
-    setName(e.target.value);
+    setUserName(e.target.value);
   };
 
   const NextLevel = () => {
     setLoading(true);
+    props.actions(setName(name))
     setTimeout(() => {
       setLoading(false);
-      props.valueAction();
-      setName("");
-    }, 3000);
+      props.valueAction()
+      setUserName("");
+    }, 1500);
   };
   return (
     <div>
@@ -44,3 +48,15 @@ export default function SetName(props) {
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions:bindActionCreators(setName,dispatch)
+  }
+}
+
+const mapStateToProps = (state) => {
+  return state;
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SetName);

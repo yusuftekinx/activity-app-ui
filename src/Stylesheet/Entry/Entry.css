@@ -1,122 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
-#entry-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+#entry-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
 }
-#entry-page #component{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #272c36;
-    width: 500px;
-    height: 350px;
-    border-radius: 12px;
-    flex-direction: column;
+#entry-page #component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272c36;
+  width: 500px;
+  height: 300px;
+  border-radius: 12px;
+  flex-direction: column;
 }
 
 #entry-page #component #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-#entry-page #component #app #input{
-    width: 300px;
+#entry-page #component #app #input {
+  width: 300px;
 }
 
-#next-button{
-    background-color: #FB855C;
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-    text-align: center;
-    color: white;
+#next-button {
+  background-color: #fb855c;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  text-align: center;
+  color: white;
 }
 
 #number-input {
-    width: 300px;
+  width: 300px;
 }
 #entry-page #component #header #head {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 3rem;
-    color: #FB855C;
-    font-family: 'Indie Flower', cursive;
-    font-family: 'Roboto Mono', monospace;
-    text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 3rem;
+  color: #fb855c;
+  font-family: "Indie Flower", cursive;
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
 }
 
-#entry-page #image{
-    width: 512px;
-    height: 512px;
-    margin:20px
+#entry-page #image {
+  width: 512px;
+  height: 512px;
+  margin: 20px;
 }
 
-#entry-page #navbar{
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    top: 0;
+#entry-page #navbar {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-#entry-page #navbar img{
-    left: 30px;
-    position: absolute;
-    top: 27px;
-    width: 36px;
-    height: 36px;
-
+#entry-page #navbar img {
+  left: 30px;
+  position: absolute;
+  top: 27px;
+  width: 36px;
+  height: 36px;
 }
 
-#entry-page #navbar #head{
-    left: 80px;
-    position: absolute;
-    top: 5px;
-    font-size: 24px;
-    color: white;
+#entry-page #navbar #head {
+  left: 80px;
+  position: absolute;
+  top: 5px;
+  font-size: 24px;
+  color: white;
 }
 
-@media screen and (max-width:930px) {
-    #entry-page{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: rgba(39, 44, 54, 0.9);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  color: white;
+  width: 30%; /* Could be more or less, depending on screen size */
+  height: 200px;
+  border-radius: 6px;
+  position: relative;
+}
+#header {
+  color: white;
+}
+
+.confirmarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.inputcode{
+    width: 90%;
+}
+
+
+@media screen and (max-width: 930px) {
+    #entry-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
-
-    #entry-page #component{
-        margin-top: 100px;
-    }
-
-}
-
-@media screen and (max-width:530px) {
+  
     #entry-page #component {
-        width: 90%;
+      margin-top: 100px;
     }
-    #entry-page #component #app{
-        width: 90%;
+    .modal-content{
+        width: 50%;
+        margin-top: 40px;
     }
+  }
+  
+  @media screen and (max-width: 530px) {
+    #entry-page #component {
+      width: 90%;
+    }
+    #entry-page #component #app {
+      width: 90%;
+    }
+  
+    #entry-page #component #app #input {
+      width: 90%;
+    }
+  
+    #entry-page #image {
+      display: none;
+    }
+    #entry-page #component {
+      margin-top: 0px;
+    }
+    #entry-page #component #header #head {
+      font-size: 18px;
+    }
+  
+    .modal-content{
+        width:85%;
+        margin-top: 40px;
 
-    #entry-page #component #app #input{
-        width: 90%;
     }
-
-    #entry-page #image{
-        display: none;
-    }
-    #entry-page #component{
-        margin-top: 0px;
-    }
-    #entry-page #component #header #head{
-        font-size: 18px;
-    }
-
-    
-}
-
+  }

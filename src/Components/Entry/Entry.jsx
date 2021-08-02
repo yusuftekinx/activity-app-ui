@@ -8,7 +8,7 @@ import PhoneNumber from "../PhoneNumber/PhoneNumber";
 import {ToastContainer} from 'react-toastify'
 function Entry() {
   let [progressbarvalue, setprogressbarvalue] = useState(1);
-
+  let [label,setLabel] = useState("");
   const changePBValue =  () => {
     setprogressbarvalue(progressbarvalue+=1);
   }
@@ -17,11 +17,15 @@ function Entry() {
     setprogressbarvalue(1)
   }
 
+  const changeLabel = (label) => {
+    setLabel(label);
+  }
+
 
 
   const components = [
     {key:1,component:<SetName valueAction = {changePBValue} title = {"Etkinlik oluşturmaya başla"} />},
-    {key:2,component:<PhoneNumber title={"Telefon numarası"} value = {progressbarvalue} goStart = {goStart}/>}
+    {key:2,component:<PhoneNumber title={"Telefon numarası"} changeLabel = {changeLabel} changePBValue = {changePBValue} value = {progressbarvalue} goStart = {goStart}/>}
   ]
 
 
@@ -33,7 +37,7 @@ function Entry() {
         <Header id="head">aktivity.app</Header>
       </div>
       <div id="component">
-        <Progress value = {progressbarvalue} total = "3" indicating style = {{width:"70%"}} />
+        <Progress size = {'tiny'} value = {progressbarvalue}  total = "3" indicating style = {{width:"70%"}} ><span style={{color:"white"}}>{label}</span></Progress>
         {
           components.filter(component => component.key === progressbarvalue).map(component => (component.component))
         }

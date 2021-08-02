@@ -1,16 +1,41 @@
-import { Route,BrowserRouter as Router, Switch } from 'react-router-dom';
-import './App.css';
-import Entry from './Components/Entry/Entry.jsx'
-import Home from './Components/Home/Home';
+import { useEffect, useState } from "react";
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import "./App.css";
+import Entry from "./Components/Entry/Entry.jsx";
+import Home from "./Components/Home/Home";
 
 function App() {
+  let getToken = () => {
+    return localStorage.getItem("token");
+  };
   return (
     <div className="App">
-      <Router >
+      <Router>
         <Switch>
-          <Route exact path = "/" component = {Entry}></Route>
-          <Route exact path = "/login" component = {Entry}></Route>
-          <Route exact path = "/home" component = {Home}></Route>
+          {getToken() === null ? (
+            <div>
+              <Route exact path="/" component={Entry}></Route>
+              <Route exact path="/login" component={Entry}></Route>
+              <Route exact path="/home">
+                <Redirect to="/login" />
+              </Route>
+            </div>
+          ) : (
+            <div>
+              <Route exact path="/home" component = {Home}>
+              </Route>
+              <Route exact path="/" component = {Home}>
+              </Route>
+              <Route exact path="/login">
+                <Redirect to = "/home" />
+              </Route>
+            </div>
+          )}
         </Switch>
       </Router>
     </div>

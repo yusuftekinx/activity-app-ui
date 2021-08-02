@@ -5,11 +5,14 @@ import App from './App';
 import 'semantic-ui-css/semantic.min.css'
 import 'react-toastify/dist/ReactToastify.css';
 import reportWebVitals from './reportWebVitals';
+import {Store} from './Redux/reducer/Store';
+import {Provider} from 'react-redux'
+const store = Store();
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store = {store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
